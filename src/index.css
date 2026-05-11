@@ -8,6 +8,6 @@
 
 @layer base {
   body {
-    @apply font-sans text-slate-800 bg-white;
+    @apply font-sans text-xl text-slate-800 bg-white;
   }
 }

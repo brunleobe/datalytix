@@ -1,7 +1,7 @@
 export function TopBar() {
   return (
     <div className="w-full bg-white py-2 border-b border-gray-100 hidden md:block">
-      <div className="container mx-auto px-4 flex justify-end items-center gap-6 text-sm">
+      <div className="container mx-auto px-4 flex justify-end items-center gap-6 text-base">
         <div className="flex items-center gap-4 text-secondary">
           <a href="#" className="hover:opacity-80 transition-opacity">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>

@@ -40,7 +40,7 @@ export function WhyChooseUsSection() {
 
           {/* Left Column: Testimonial */}
           <div>
-            <h2 className="text-xl font-semibold text-slate-700 mb-6 tracking-wide">
+            <h2 className="text-2xl font-bold text-slate-800 mb-8 tracking-wide">
               What our customers say?
             </h2>
             <div className="bg-slate-50 p-8 rounded-sm relative">
@@ -48,7 +48,7 @@ export function WhyChooseUsSection() {
                 size={48}
                 className="text-slate-200 fill-slate-200 absolute top-4 left-4"
               />
-              <p className="text-[#4CBAD1] text-sm leading-relaxed mb-6 relative z-10 pl-6">
+              <p className="text-[#4CBAD1] text-base leading-relaxed mb-6 relative z-10 pl-6">
                 We are an Information Technology Solutions Delivery Company certified across
                 multiple OEM's such as Oracle, Microsoft, Thomson Reuters etc. with
                 competencies in Business Intelligence and Analytics, Data Warehousing, Unified
@@ -57,16 +57,16 @@ export function WhyChooseUsSection() {
                 experience of over 40 years helping us bring provide simple solutions to complex
                 IT problems.
               </p>
-              <div className="flex items-center text-slate-500 pl-6 text-sm">
-                <User size={16} className="mr-2" />
-                <span className="font-medium">Freesiatech</span>
+              <div className="flex items-center text-slate-500 pl-6 text-base">
+                <User size={18} className="mr-2" />
+                <span className="font-semibold text-slate-700">Freesiatech</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Accordion */}
           <div>
-            <h2 className="text-xl font-semibold text-slate-700 mb-6 tracking-wide">
+            <h2 className="text-2xl font-bold text-slate-800 mb-8 tracking-wide">
               Why choose Datalytix NG?
             </h2>
             <div className="space-y-2">
@@ -80,13 +80,13 @@ export function WhyChooseUsSection() {
                     >
                       <div className="flex items-center space-x-4">
                         <span
-                          className={`font-bold text-sm ${isOpen ? 'text-[#4CBAD1]' : 'text-slate-800'
+                          className={`font-bold text-base ${isOpen ? 'text-[#4CBAD1]' : 'text-slate-800'
                             }`}
                         >
                           {item.id}
                         </span>
                         <span
-                          className={`font-medium text-sm ${isOpen ? 'text-[#4CBAD1]' : 'text-slate-700'
+                          className={`font-semibold text-base ${isOpen ? 'text-[#4CBAD1]' : 'text-slate-700'
                             }`}
                         >
                           {item.title}
@@ -97,7 +97,7 @@ export function WhyChooseUsSection() {
                       </div>
                     </button>
                     {isOpen && (
-                      <div className="px-4 pb-4 pl-12 text-sm text-slate-500 leading-relaxed">
+                      <div className="px-4 pb-4 pl-12 text-base text-slate-500 leading-relaxed">
                         {item.content}
                       </div>
                     )}

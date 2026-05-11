@@ -40,11 +40,11 @@ export function InfoSection() {
                 {section.icon}
               </div>
 
-              <h2 className="text-xl font-bold text-secondary mb-6 tracking-wide">
+              <h2 className="text-2xl font-bold text-secondary mb-6 tracking-wide">
                 {section.title}
               </h2>
 
-              <p className="text-sm text-slate-500 leading-relaxed text-justify">
+              <p className="text-base text-slate-500 leading-relaxed text-justify">
                 {section.content}
               </p>
             </div>

@@ -8,7 +8,7 @@ export function Footer() {
 
         {/* Center Copyright */}
         <div className="flex-1 text-center mb-4 md:mb-0">
-          <p className="text-xs text-slate-400">
+          <p className="text-sm text-slate-400">
             © 2026 Datalytix NG. All Rights Reserved.
           </p>
         </div>

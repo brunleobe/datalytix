@@ -21,7 +21,7 @@ export function Navbar() {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <div className="hidden md:flex items-center space-x-6 text-base font-medium">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}

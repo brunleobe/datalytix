@@ -1,45 +1,72 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
+const slides = [
+  {
+    image: '/business intelligence.png',
+    title: (
+      <>
+        Business Intelligence<br />
+        and Analytics
+      </>
+    ),
+  },
+  {
+    image: '/hero-bg.png',
+    title: (
+      <>
+        Business Process Automation and<br />
+        Document Management Solution
+      </>
+    ),
+  },
+  {
+    image: '/home-hosting-slider-1.jpg',
+    title: (
+      <>
+        Information Technology<br />
+        Solutions Delivery
+      </>
+    ),
+  },
+  {
+    image: '/education.jpg',
+    title: (
+      <>
+        Educational Administration and<br />
+        Learning Management Solution
+      </>
+    ),
+  },
+  {
+    image: '/datacenter.jpg',
+    title: (
+      <>
+        Datacenter and<br />
+        Networking Solution
+      </>
+    ),
+  },
+  {
+    image: '/business-process.jpg',
+    title: (
+      <>
+        Business Process Automation and <br />
+        Document Management Solution
+      </>
+    ),
+  },
+];
+
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1));
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 4000);
     return () => clearInterval(timer);
   }, []);
-
-  const slides = [
-    {
-      image: '/hero-bg.png',
-      title: (
-        <>
-          Business Process Automation and<br />
-          Document Management Solution
-        </>
-      ),
-    },
-    {
-      image: '/home-hosting-slider-1.jpg',
-      title: (
-        <>
-          Information Technology<br />
-          Solutions Delivery
-        </>
-      ),
-    },
-    {
-      image: '/education.jpg',
-      title: (
-        <>
-          Educational Administration and<br />
-          Learning Management Solution
-        </>
-      ),
-    },
-  ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -81,17 +108,32 @@ export function Hero() {
         </button>
 
         {/* Hero Content */}
-        <div className="max-w-3xl ml-12 lg:ml-24 z-10">
+        <div className="max-w-4xl ml-12 lg:ml-24 z-10">
           {slides.map((slide, index) => (
             <h1
               key={index}
-              className={`text-4xl md:text-5xl font-semibold text-white leading-tight drop-shadow-md absolute top-1/2 -translate-y-1/2 transition-all duration-700 ${index === currentSlide
+              className={`text-5xl md:text-7xl font-semibold text-white leading-tight drop-shadow-lg absolute top-1/2 -translate-y-1/2 transition-all duration-700 ${index === currentSlide
                 ? 'opacity-100 translate-x-0'
-                : 'opacity-0 translate-x-8 pointer-events-none'
+                : 'opacity-0 translate-x-12 pointer-events-none'
                 }`}
             >
               {slide.title}
             </h1>
+          ))}
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3 #46b5ca">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${index === currentSlide
+                ? 'bg-white scale-125 shadow-[0_0_8px_rgba(255,255,255,0.8)]'
+                : 'bg-white/40 hover:bg-white/60'
+                }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
       </div>

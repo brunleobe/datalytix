@@ -47,19 +47,19 @@ export function ServicesSection() {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-2xl font-semibold text-slate-800 mb-8 tracking-wide">
+        <h2 className="text-3xl font-semibold text-slate-800 mb-10 tracking-wide text-center">
           What We Do
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="bg-[#46b5ca] p-8 text-white flex flex-col">
-              <h3 className="text-xl font-bold mb-6 font-serif tracking-wide">
+            <div key={index} className="bg-[#46b5ca] p-10 text-white flex flex-col shadow-sm">
+              <h3 className="text-2xl font-bold mb-8 font-serif tracking-wide">
                 {service.title}
               </h3>
-              <ul className="space-y-4">
+              <ul className="space-y-5">
                 {service.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start text-sm">
-                    <Check size={20} className="text-slate-900 mr-4 shrink-0" strokeWidth={3} />
+                  <li key={itemIndex} className="flex items-start text-base">
+                    <Check size={22} className="text-slate-900 mr-4 shrink-0" strokeWidth={3} />
                     <span>{item}</span>
                   </li>
                 ))}
