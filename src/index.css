@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--color-cyan-500);
+  --color-secondary: var(--color-pink-700);
+  --color-dark: var(--color-slate-800);
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-800 bg-white;
+  }
+}
