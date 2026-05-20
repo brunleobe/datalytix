@@ -34,21 +34,21 @@ export function WhyChooseUsSection() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white scroll-mt-32">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
 
           {/* Left Column: Testimonial */}
           <div>
             <h2 className="text-2xl font-bold text-slate-800 mb-8 tracking-wide">
               What our customers say?
             </h2>
-            <div className="bg-slate-50 p-8 rounded-sm relative">
+            <div className="bg-slate-50 p-6 md:p-10 rounded-sm relative overflow-hidden">
               <Quote
                 size={48}
-                className="text-slate-200 fill-slate-200 absolute top-4 left-4"
+                className="text-slate-200 fill-slate-200 absolute top-2 left-2 opacity-50"
               />
-              <p className="text-[#4CBAD1] text-base leading-relaxed mb-6 relative z-10 pl-6">
+              <p className="text-[#4CBAD1] text-base leading-relaxed mb-6 relative z-10">
                 We are an Information Technology Solutions Delivery Company certified across
                 multiple OEM's such as Oracle, Microsoft, Thomson Reuters etc. with
                 competencies in Business Intelligence and Analytics, Data Warehousing, Unified
@@ -57,8 +57,8 @@ export function WhyChooseUsSection() {
                 experience of over 40 years helping us bring provide simple solutions to complex
                 IT problems.
               </p>
-              <div className="flex items-center text-slate-500 pl-6 text-base">
-                <User size={18} className="mr-2" />
+              <div className="flex items-center text-slate-500 text-base relative z-10">
+                <User size={18} className="mr-2 text-primary" />
                 <span className="font-semibold text-slate-700">Freesiatech</span>
               </div>
             </div>

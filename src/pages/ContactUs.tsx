@@ -68,7 +68,7 @@ export function ContactUs() {
           {/* Right Column: Form */}
           <div className="md:w-2/3">
             <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div>
                   <label className="block text-sm text-slate-500 mb-2">Name:</label>
                   <input type="text" className="w-full border border-slate-200 p-3 text-base focus:outline-none focus:border-primary transition-colors" />

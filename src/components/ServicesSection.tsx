@@ -45,12 +45,12 @@ export function ServicesSection() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="what-we-do" className="py-16 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <h2 className="text-3xl font-semibold text-slate-800 mb-10 tracking-wide text-center">
           What We Do
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div key={index} className="bg-[#46b5ca] p-10 text-white flex flex-col shadow-sm">
               <h3 className="text-2xl font-bold mb-8 font-serif tracking-wide">

@@ -30,9 +30,9 @@ export function InfoSection() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="who-we-are" className="py-16 bg-white scroll-mt-32">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {sections.map((section, index) => (
             <div key={index} className="text-center px-2">
               {/* Icon Placeholder (In original these were small graphics) */}

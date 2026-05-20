@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: var(--color-cyan-500);
+  --color-primary: #46b5ca;
   --color-secondary: var(--color-pink-700);
   --color-dark: var(--color-slate-800);
 }
@@ -10,4 +10,16 @@
   body {
     @apply font-sans text-xl text-slate-800 bg-white;
   }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

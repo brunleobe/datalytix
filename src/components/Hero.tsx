@@ -47,15 +47,6 @@ const slides = [
       </>
     ),
   },
-  {
-    image: '/business-process.jpg',
-    title: (
-      <>
-        Business Process Automation and <br />
-        Document Management Solution
-      </>
-    ),
-  },
 ];
 
 export function Hero() {
@@ -108,11 +99,11 @@ export function Hero() {
         </button>
 
         {/* Hero Content */}
-        <div className="max-w-4xl ml-12 lg:ml-24 z-10">
+        <div className="max-w-4xl px-4 lg:px-0 lg:ml-24 z-10 w-full text-center lg:text-left">
           {slides.map((slide, index) => (
             <h1
               key={index}
-              className={`text-5xl md:text-7xl font-semibold text-white leading-tight drop-shadow-lg absolute top-1/2 -translate-y-1/2 transition-all duration-700 ${index === currentSlide
+              className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight drop-shadow-lg absolute top-1/2 -translate-y-1/2 transition-all duration-700 ${index === currentSlide
                 ? 'opacity-100 translate-x-0'
                 : 'opacity-0 translate-x-12 pointer-events-none'
                 }`}
