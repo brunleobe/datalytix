@@ -28,17 +28,29 @@ export function PartnersSection() {
   ];
 
   return (
-    <section className="py-16 bg-white border-y border-slate-100 mt-12 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-7xl mb-8">
-        <h2 className="text-xl font-semibold text-slate-700 tracking-wide text-center md:text-left">
-          Our Partners
-        </h2>
-      </div>
-
+    <section
+      className="py-12 overflow-hidden border-y"
+      style={{
+        backgroundColor: '#ffffff',
+        borderColor: 'rgba(0, 0, 0, 0.06)',
+      }}
+    >
       <div className="relative w-full max-w-[100vw] mx-auto flex items-center">
         {/* Gradient overlays for smooth entry/exit effect */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+        <div
+          className="absolute left-0 top-0 bottom-0 w-20 md:w-48 z-10 pointer-events-none"
+          style={{
+            background: 'gradient(linear, left top, right top, from(#ffffff), to(transparent))',
+            backgroundImage: 'linear-gradient(to right, #ffffff 0%, transparent 100%)',
+          }}
+        />
+        <div
+          className="absolute right-0 top-0 bottom-0 w-20 md:w-48 z-10 pointer-events-none"
+          style={{
+            background: 'gradient(linear, right top, left top, from(#ffffff), to(transparent))',
+            backgroundImage: 'linear-gradient(to left, #ffffff 0%, transparent 100%)',
+          }}
+        />
 
         {/* Marquee Container */}
         <div className="flex w-max animate-marquee">
@@ -47,19 +59,19 @@ export function PartnersSection() {
             {partners.map((partner) => (
               <div
                 key={`set1-${partner.id}`}
-                className="flex-shrink-0 w-40 md:w-56 px-6 md:px-10 h-24 flex items-center justify-center group cursor-pointer"
+                className="flex-shrink-0 w-36 md:w-48 px-6 md:px-8 h-16 flex items-center justify-center group cursor-pointer"
               >
-                <div className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <div className="w-full h-full flex items-center justify-center transition-all duration-300">
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-h-full max-w-full object-contain transition-all duration-500"
+                    className="max-h-10 max-w-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                       (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
                     }}
                   />
-                  <span className="hidden text-sm font-bold text-slate-400 group-hover:text-slate-600 transition-colors text-center uppercase tracking-wider">
+                  <span className="hidden text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors text-center uppercase tracking-wider">
                     {partner.name}
                   </span>
                 </div>
@@ -72,19 +84,19 @@ export function PartnersSection() {
             {partners.map((partner) => (
               <div
                 key={`set2-${partner.id}`}
-                className="flex-shrink-0 w-40 md:w-56 px-6 md:px-10 h-24 flex items-center justify-center group cursor-pointer"
+                className="flex-shrink-0 w-36 md:w-48 px-6 md:px-8 h-16 flex items-center justify-center group cursor-pointer"
               >
-                <div className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <div className="w-full h-full flex items-center justify-center transition-all duration-300">
                   <img
                     src={partner.logo}
                     alt={`${partner.name} logo`}
-                    className="max-h-full max-w-full object-contain transition-all duration-500"
+                    className="max-h-10 max-w-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                       (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
                     }}
                   />
-                  <span className="hidden text-sm font-bold text-slate-400 group-hover:text-slate-600 transition-colors text-center uppercase tracking-wider">
+                  <span className="hidden text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors text-center uppercase tracking-wider">
                     {partner.name}
                   </span>
                 </div>

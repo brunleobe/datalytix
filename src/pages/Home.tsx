@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Hero } from '../components/Hero';
-import { InfoSection } from '../components/InfoSection';
+import { WhoWeAreSection } from '../components/WhoWeAreSection';
 import { ServicesSection } from '../components/ServicesSection';
 import { WhyChooseUsSection } from '../components/WhyChooseUsSection';
 import { PartnersSection } from '../components/PartnersSection';
@@ -22,10 +22,10 @@ export function Home() {
   return (
     <>
       <Hero />
-      <InfoSection />
+      <PartnersSection />
+      <WhoWeAreSection />
       <ServicesSection />
       <WhyChooseUsSection />
-      <PartnersSection />
     </>
   );
 }
