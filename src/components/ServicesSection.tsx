@@ -45,7 +45,7 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="what-we-do" className="py-16 bg-white">
+    <section id="what-we-do" className="py-16 bg-white mt-20">
       <div className="container mx-auto px-4 max-w-7xl">
         <h2 className="text-3xl font-semibold text-slate-800 mb-10 tracking-wide text-center">
           What We Do
