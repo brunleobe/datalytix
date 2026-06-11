@@ -1,71 +1,103 @@
-import { Check } from 'lucide-react';
-
-interface ServiceCategory {
-  title: string;
-  items: string[];
-}
+import { Database, BarChart3, Layers, MessageSquare, Monitor, Settings } from 'lucide-react';
 
 export function ServicesSection() {
-  const services: ServiceCategory[] = [
+  const services = [
     {
-      title: 'Network Solutions',
-      items: [
-        'Unified Communication',
-        'Business Process Management',
-        'IT Consulting & Outsourcing',
-        'Content Management',
-        'Access Control',
-        'Video Surveillance',
-      ],
+      number: '01',
+      title: 'Data Management & Replication',
+      description: 'Reliable ingestion, replication and governance that keep your data accurate, available and trusted.',
+      icon: Database,
     },
     {
-      title: 'Infrastructure Solution',
-      items: [
-        'Data Centre Solution',
-        'IT Service Management',
-        'It Operations Management Solution',
-        'Converged Platforms and Storage Solution',
-        'Business Enterprise Software',
-        'Business Intelligence & Analytics Solution',
-        'Data Management & Real Time Replication solution',
-        'IT Automation Solution',
-      ],
+      number: '02',
+      title: 'Business Intelligence & Analytics',
+      description: 'Dashboards, models and reporting that turn raw operational data into decisions leaders can act on.',
+      icon: BarChart3,
     },
     {
-      title: 'Security Solution',
-      items: [
-        'Network Access Control',
-        'Unified Threat Management Solution',
-        'Multifactor Authentication',
-        'Encryption',
-        'Endpoint and Email Security',
-        'DNS Security',
-      ],
+      number: '03',
+      title: 'Data Warehousing',
+      description: 'Scalable warehouses and pipelines engineered for performance, consistency and long-term value.',
+      icon: Layers,
+    },
+    {
+      number: '04',
+      title: 'Unified Messaging & Comms',
+      description: 'Integrated communication platforms that connect teams across channels, sites and devices.',
+      icon: MessageSquare,
+    },
+    {
+      number: '05',
+      title: 'Advanced Infrastructure',
+      description: 'Networking, high availability and disaster recovery designed to keep operations resilient.',
+      icon: Monitor,
+    },
+    {
+      number: '06',
+      title: 'Shared Services & Consulting',
+      description: 'ERP, managed support and advisory that retire technical debt and unlock new efficiency.',
+      icon: Settings,
     },
   ];
 
   return (
-    <section id="what-we-do" className="py-16 bg-white mt-20">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-3xl font-semibold text-slate-800 mb-10 tracking-wide text-center">
-          What We Do
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="bg-[#46b5ca] p-10 text-white flex flex-col shadow-sm">
-              <h3 className="text-2xl font-bold mb-8 font-serif tracking-wide">
-                {service.title}
-              </h3>
-              <ul className="space-y-5">
-                {service.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start text-base">
-                    <Check size={22} className="text-slate-900 mr-4 shrink-0" strokeWidth={3} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+    <section className="py-20 md:py-28 bg-[#f4f7f9] scroll-mt-24" id="what-we-do">
+      <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
+        {/* Header Intro */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-16">
+          <div className="lg:col-span-7">
+            {/* Eyebrow */}
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-6 h-[2px] bg-[#3cd882]"></span>
+              <span className="text-xs font-bold tracking-[0.25em] text-[#3cd882] uppercase font-mono">
+                What We Do
+              </span>
             </div>
-          ))}
+            {/* Heading */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#05120a] leading-[1.15] tracking-tight">
+              Competencies that span the full data lifecycle.
+            </h2>
+          </div>
+
+          <div className="lg:col-span-5 lg:pt-10">
+            {/* Description */}
+            <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-sans">
+              From the database to the boardroom — we design, build, deploy and support the systems your business runs on.
+            </p>
+          </div>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col group"
+              >
+                {/* Icon Box */}
+                <div className="w-10 h-10 flex items-center justify-center bg-slate-100 rounded-xl mb-3 transition-colors duration-300 group-hover:bg-[#3cd882]">
+                  <Icon size={20} className="text-slate-600 group-hover:text-[#05120a] transition-colors duration-300" />
+                </div>
+
+                {/* Number */}
+                <span className="text-xs font-bold text-[#3cd882] font-mono mb-3 block">
+                  {service.number}
+                </span>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-[#05120a] mb-3 leading-snug">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-slate-500 text-sm md:text-base leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

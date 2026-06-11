@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { Hero } from '../components/Hero';
 import { WhoWeAreSection } from '../components/WhoWeAreSection';
 import { ServicesSection } from '../components/ServicesSection';
+import { IndustriesSection } from '../components/IndustriesSection';
+import { DeliverySection } from '../components/DeliverySection';
+import { OutcomeSection } from '../components/OutcomeSection';
+import { CtaSection } from '../components/CtaSection';
 import { WhyChooseUsSection } from '../components/WhyChooseUsSection';
 import { PartnersSection } from '../components/PartnersSection';
 
@@ -25,6 +29,10 @@ export function Home() {
       <PartnersSection />
       <WhoWeAreSection />
       <ServicesSection />
+      <IndustriesSection />
+      <DeliverySection />
+      <OutcomeSection />
+      <CtaSection />
       <WhyChooseUsSection />
     </>
   );
