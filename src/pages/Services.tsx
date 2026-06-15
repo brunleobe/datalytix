@@ -3,8 +3,6 @@ import { ServicesHero } from '../components/ServicesHero';
 import { CompetencyDetailedList } from '../components/CompetencyDetailedList';
 import { ElevenCompetencies } from '../components/ElevenCompetencies';
 import { EngagementModels } from '../components/EngagementModels';
-import { DeliverySection } from '../components/DeliverySection';
-import { OutcomeSection } from '../components/OutcomeSection';
 import { ConsultationCta } from '../components/ConsultationCta';
 
 export function Services() {
