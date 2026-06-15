@@ -5,7 +5,7 @@ import { ElevenCompetencies } from '../components/ElevenCompetencies';
 import { EngagementModels } from '../components/EngagementModels';
 import { DeliverySection } from '../components/DeliverySection';
 import { OutcomeSection } from '../components/OutcomeSection';
-import { CtaSection } from '../components/CtaSection';
+import { ConsultationCta } from '../components/ConsultationCta';
 
 export function Services() {
   useEffect(() => {
@@ -26,14 +26,9 @@ export function Services() {
       {/* Engagement Models */}
       <EngagementModels />
 
-      {/* Methodology Section */}
-      <DeliverySection />
-
-      {/* Outcome Section */}
-      <OutcomeSection />
-
       {/* CTA Section */}
-      <CtaSection />
+      <ConsultationCta />
+
     </div>
   );
 }
