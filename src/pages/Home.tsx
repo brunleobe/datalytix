@@ -6,7 +6,6 @@ import { IndustriesSection } from '../components/IndustriesSection';
 import { DeliverySection } from '../components/DeliverySection';
 import { OutcomeSection } from '../components/OutcomeSection';
 import { CtaSection } from '../components/CtaSection';
-import { WhyChooseUsSection } from '../components/WhyChooseUsSection';
 import { PartnersSection } from '../components/PartnersSection';
 
 export function Home() {
@@ -33,7 +32,6 @@ export function Home() {
       <DeliverySection />
       <OutcomeSection />
       <CtaSection />
-      <WhyChooseUsSection />
     </>
   );
 }

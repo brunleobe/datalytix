@@ -1,43 +1,24 @@
 import { Menu, X } from 'lucide-react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Services', path: '/#what-we-do' },
-    { name: 'About', path: '/#who-we-are' },
-    { name: 'Contact', path: '/contact-us#contact-form' },
+    { name: 'Services', path: '/services' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
-  const handleNavClick = (e: React.MouseEvent, path: string, name: string) => {
+  const handleNavClick = (e: React.MouseEvent, path: string) => {
     setIsMenuOpen(false);
 
-    if (name === 'Home' && location.pathname === '/') {
+    if (location.pathname === path) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      navigate('/');
-    }
-
-    const isHashLink = path.includes('#');
-    if (isHashLink) {
-      e.preventDefault();
-      const [targetPath, hash] = path.split('#');
-      const isSamePage =
-        location.pathname === targetPath ||
-        (location.pathname === '/' && targetPath === '');
-
-      if (isSamePage) {
-        const element = document.getElementById(hash);
-        element?.scrollIntoView({ behavior: 'smooth' });
-        navigate(path);
-      } else {
-        navigate(path);
-      }
     }
   };
 
@@ -45,37 +26,30 @@ export function Navbar() {
     <nav className="w-full sticky top-0 z-50" style={{ background: 'rgba(5, 18, 10, 0.92)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(70,181,202,0.08)' }}>
       <div className="container mx-auto px-6 flex items-center justify-between h-16">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
           <img src="/logo.png" alt="Datalytix Logo" className="h-9 w-auto object-contain brightness-0 invert" />
-        </div>
+        </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-4">
           {navLinks.map((link) => (
             <NavLink
               key={link.name}
               to={link.path}
               end={link.path === '/'}
-              onClick={(e) => handleNavClick(e, link.path, link.name)}
+              onClick={(e) => handleNavClick(e, link.path)}
               className={({ isActive }) => {
-                const isLinkActive = link.path.includes('#')
-                  ? location.hash === `#${link.path.split('#')[1]}`
-                  : isActive && (link.path !== '/' || !location.hash);
-
-                return `text-sm font-medium transition-colors relative group ${
-                  isLinkActive ? 'text-[#4ade80]' : 'text-white/80 hover:text-white'
+                return `text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full relative group ${
+                  isActive ? 'text-[#4ade80] hover:bg-white/10' : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`;
               }}
             >
               {({ isActive }) => {
-                const isLinkActive = link.path.includes('#')
-                  ? location.hash === `#${link.path.split('#')[1]}`
-                  : isActive && (link.path !== '/' || !location.hash);
                 return (
                   <>
                     {link.name}
-                    {isLinkActive && (
-                      <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#4ade80]" />
+                    {isActive && (
+                      <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#4ade80]" />
                     )}
                   </>
                 );
@@ -86,9 +60,9 @@ export function Navbar() {
 
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <a
-            href="/contact-us#contact-form"
-            onClick={(e) => handleNavClick(e, '/contact-us#contact-form', 'Contact')}
+          <NavLink
+            to="/contact"
+            onClick={(e) => handleNavClick(e, '/contact')}
             className="hidden lg:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 hover:scale-105 active:scale-95"
             style={{
               backgroundColor: '#3cd882',
@@ -97,7 +71,7 @@ export function Navbar() {
             }}
           >
             Book a consultation <span className="ml-1 text-base leading-none">→</span>
-          </a>
+          </NavLink>
 
           <button
             className="lg:hidden text-white/80 hover:text-white"
@@ -120,22 +94,19 @@ export function Navbar() {
               key={link.name}
               to={link.path}
               end={link.path === '/'}
-              onClick={(e) => handleNavClick(e, link.path, link.name)}
+              onClick={(e) => handleNavClick(e, link.path)}
               className={({ isActive }) => {
-                const isLinkActive = link.path.includes('#')
-                  ? location.hash === `#${link.path.split('#')[1]}`
-                  : isActive && (link.path !== '/' || !location.hash);
-                return `text-base font-medium transition-colors ${
-                  isLinkActive ? 'text-[#4ade80]' : 'text-white/80'
+                return `text-base font-medium transition-all duration-200 px-4 py-2 rounded-xl ${
+                  isActive ? 'text-[#4ade80] hover:bg-white/10' : 'text-white/80 hover:text-white hover:bg-white/10'
                 }`;
               }}
             >
               {link.name}
             </NavLink>
           ))}
-          <a
-            href="/contact-us#contact-form"
-            onClick={(e) => handleNavClick(e, '/contact-us#contact-form', 'Contact')}
+          <NavLink
+            to="/contact"
+            onClick={(e) => handleNavClick(e, '/contact')}
             className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 active:scale-95"
             style={{
               backgroundColor: '#3cd882',
@@ -144,7 +115,7 @@ export function Navbar() {
             }}
           >
             Book a consultation →
-          </a>
+          </NavLink>
         </div>
       )}
     </nav>

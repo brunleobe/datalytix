@@ -1,26 +1,6 @@
-import type { MouseEvent } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function CtaSection() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const handleCtaClick = (e: MouseEvent) => {
-    e.preventDefault();
-    const path = '/contact-us#contact-form';
-    const [, hash] = path.split('#');
-
-    const isSamePage = location.pathname === '/contact-us';
-
-    if (isSamePage) {
-      const element = document.getElementById(hash);
-      element?.scrollIntoView({ behavior: 'smooth' });
-      navigate(path);
-    } else {
-      navigate(path);
-    }
-  };
-
   return (
     <section className="pb-20 md:pb-28 bg-[#f4f7f9] scroll-mt-24">
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
@@ -66,9 +46,8 @@ export function CtaSection() {
             </p>
 
             {/* CTA Button */}
-            <a
-              href="/contact-us#contact-form"
-              onClick={handleCtaClick}
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 px-9 py-4 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 active:scale-95 group"
               style={{
                 backgroundColor: '#3cd882',
@@ -77,7 +56,7 @@ export function CtaSection() {
               }}
             >
               Start a conversation <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

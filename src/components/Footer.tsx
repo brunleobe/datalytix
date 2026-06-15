@@ -1,10 +1,10 @@
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
 const pages = [
   { name: 'Home', path: '/' },
-  { name: 'Services', path: '/#what-we-do' },
-  { name: 'About', path: '/#who-we-are' },
-  { name: 'Contact', path: '/contact-us#contact-form' },
+  { name: 'Services', path: '/services' },
+  { name: 'About', path: '/about' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 const competencies = [
@@ -15,23 +15,12 @@ const competencies = [
 ];
 
 export function Footer() {
-  const navigate = useNavigate();
   const location = useLocation();
 
   const handleNavClick = (e: React.MouseEvent, path: string) => {
-    const isHashLink = path.includes('#');
-    if (!isHashLink) return;
-    e.preventDefault();
-    const [targetPath, hash] = path.split('#');
-    const isSamePage =
-      location.pathname === targetPath ||
-      (location.pathname === '/' && targetPath === '');
-    if (isSamePage) {
-      const el = document.getElementById(hash);
-      el?.scrollIntoView({ behavior: 'smooth' });
-      navigate(path);
-    } else {
-      navigate(path);
+    if (location.pathname === path) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -44,7 +33,11 @@ export function Footer() {
           {/* Col 1 – Brand */}
           <div className="flex flex-col gap-5">
             {/* Logo */}
-            <div className="flex items-center gap-2">
+            <Link
+              to="/"
+              onClick={(e) => handleNavClick(e, '/')}
+              className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+            >
               <span
                 className="w-5 h-5 rounded-sm flex items-center justify-center shrink-0"
                 style={{ backgroundColor: '#3cd882' }}
@@ -62,7 +55,7 @@ export function Footer() {
               <span className="font-extrabold text-white text-sm tracking-tight leading-none">
                 Datalytix <span style={{ color: '#3cd882' }}>NG</span>
               </span>
-            </div>
+            </Link>
 
             {/* Tagline */}
             <p className="text-white font-bold text-base leading-snug max-w-[200px]">
@@ -147,7 +140,7 @@ export function Footer() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                 >
-                  info@datalytixng.com
+                  kay@datalytixng.com
                 </a>
               </li>
               <li>

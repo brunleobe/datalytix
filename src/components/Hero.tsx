@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Animated line chart path helper
 function SparkLine() {
@@ -137,8 +138,8 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="/#what-we-do"
+            <Link
+              to="/services"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95"
               style={{
                 background: '#3cd882',
@@ -147,13 +148,13 @@ export function Hero() {
               }}
             >
               Explore our services <ArrowRight size={16} />
-            </a>
-            <a
-              href="/#who-we-are"
+            </Link>
+            <Link
+              to="/about"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-semibold text-sm text-white/80 border border-white/20 hover:border-white/50 hover:text-white transition-all duration-300 hover:scale-105 active:scale-95"
             >
               Why Datalytix
-            </a>
+            </Link>
           </div>
 
           {/* Stats / Metrics */}
