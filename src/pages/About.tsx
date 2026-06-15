@@ -7,6 +7,7 @@ import { TeamSection } from '../components/TeamSection';
 import { AccreditationSection } from '../components/AccreditationSection';
 import { WhyChooseUsSection } from '../components/WhyChooseUsSection';
 import { PartnersSection } from '../components/PartnersSection';
+import { AboutCta } from '../components/AboutCta';
 
 export function About() {
   useEffect(() => {
@@ -19,7 +20,7 @@ export function About() {
       <section className="relative py-24 md:py-32 overflow-hidden bg-[#05120a]">
         {/* Background Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b2414_1px,transparent_1px),linear-gradient(to_bottom,#0b2414_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_85%,transparent_100%)]"></div>
-        
+
         {/* Glow on the Right */}
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-[#3cd882]/15 rounded-full blur-[130px] pointer-events-none"></div>
 
@@ -34,7 +35,7 @@ export function About() {
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight max-w-4xl tracking-tight">
             We hold integrity at our core —<br className="hidden md:inline" /> and let our <span className="text-[#3cd882]">work prove it.</span>
           </h1>
-          
+
           <p className="text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
             Datalytix NG is an <span className="text-slate-200 font-medium">information-technology solutions delivery company</span> with over 40 years of combined experience, helping organisations bring simple solutions to complex IT problems.
           </p>
@@ -43,7 +44,7 @@ export function About() {
 
       {/* Main Sections */}
       <OurStorySection />
-      
+
       {/* Values Section */}
       <ValuesSection />
 
@@ -55,18 +56,10 @@ export function About() {
 
       {/* Accreditation Section */}
       <AccreditationSection />
-      
-      {/* Why Choose Us & Client Reviews */}
-      <WhyChooseUsSection />
 
-      {/* Partners alignment */}
-      <div className="bg-white py-12">
-        <div className="container mx-auto px-6 lg:px-12 max-w-7xl text-center mb-6">
-          <p className="text-[#16a34a] font-bold tracking-widest uppercase text-xs">Our Technology Partners</p>
-          <h2 className="text-2xl font-bold text-slate-800 mt-2">Certified across leading industry providers</h2>
-        </div>
-        <PartnersSection />
-      </div>
+      {/* About CTA Section */}
+      <AboutCta />
+
     </div>
   );
 }
