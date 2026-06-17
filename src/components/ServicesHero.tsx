@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export function ServicesHero() {
   return (
-    <section className="-mt-16 relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-[#05120a]">
+    <section className="-mt-16 relative pt-32 sm:pt-36 pb-16 sm:pb-20 md:pt-44 md:pb-28 overflow-hidden bg-[#05120a]">
       {/* Background Grid */}
       <div 
         className="absolute inset-0 opacity-40 bg-[linear-gradient(to_right,rgba(60,216,130,0.12)_1px,transparent_1px),linear-gradient(to_bottom,rgba(60,216,130,0.12)_1px,transparent_1px)] bg-[size:40px_40px]"

@@ -5,10 +5,8 @@ export function ConsultationCta() {
     <section className="py-20 md:py-28 bg-[#f4f7f9] scroll-mt-24">
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
         <div
-          className="relative rounded-[32px] overflow-hidden text-center border border-white/5"
+          className="relative rounded-[32px] overflow-hidden text-center border border-white/5 px-6 py-14 sm:px-10 sm:py-20 md:px-16 md:py-24"
           style={{
-            padding: '61.44px',
-            fontSize: '16.32px',
             color: '#fafafa',
             backgroundColor: '#0a0d0c',
             boxShadow: '0 30px 60px rgba(10, 13, 19, 0.3)'

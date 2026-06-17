@@ -110,9 +110,9 @@ export function Hero() {
         }}
       />
 
-      <div className="container mx-auto px-6 lg:px-10 relative z-10 flex flex-col lg:flex-row items-center gap-12 py-20 lg:py-28">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-10 relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-12 py-16 sm:py-20 lg:py-28">
         {/* ── LEFT COLUMN ── */}
-        <div className="flex-1 max-w-2xl">
+        <div className="flex-1 w-full max-w-2xl">
           {/* Eyebrow */}
           <p
             className="text-xs font-semibold tracking-[0.25em] uppercase mb-6"
@@ -122,7 +122,7 @@ export function Hero() {
           </p>
 
           {/* Headline */}
-          <h1 className="font-extrabold leading-[1.05] text-white mb-6" style={{ fontSize: 'clamp(2.8rem, 6vw, 5rem)' }}>
+          <h1 className="font-extrabold leading-[1.05] text-white mb-6" style={{ fontSize: 'clamp(2.2rem, 6vw, 5rem)' }}>
             Complex IT<br />
             problems,<br />
             engineered<br />
@@ -158,28 +158,28 @@ export function Hero() {
           </div>
 
           {/* Stats / Metrics */}
-          <div className="mt-16 grid grid-cols-3 gap-6 md:gap-8 max-w-lg">
+          <div className="mt-12 lg:mt-16 grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-lg">
             <div>
-              <div className="text-2xl font-bold text-white mb-2 font-mono">
+              <div className="text-xl sm:text-2xl font-bold text-white mb-2 font-mono">
                 40<span className="text-[#3cd882]">+</span>
               </div>
-              <div className="text-[10px] font-semibold tracking-widest text-white/40 uppercase leading-relaxed font-mono">
+              <div className="text-[9px] sm:text-[10px] font-semibold tracking-widest text-white/40 uppercase leading-relaxed font-mono">
                 Years Combined Experience
               </div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-white mb-2 font-mono">
+              <div className="text-xl sm:text-2xl font-bold text-white mb-2 font-mono">
                 3
               </div>
-              <div className="text-[10px] font-semibold tracking-widest text-white/40 uppercase leading-relaxed font-mono">
+              <div className="text-[9px] sm:text-[10px] font-semibold tracking-widest text-white/40 uppercase leading-relaxed font-mono">
                 OEM Certifications
               </div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-white mb-2 font-mono">
+              <div className="text-xl sm:text-2xl font-bold text-white mb-2 font-mono">
                 99.9<span className="text-[#3cd882]">%</span>
               </div>
-              <div className="text-[10px] font-semibold tracking-widest text-white/40 uppercase leading-relaxed font-mono">
+              <div className="text-[9px] sm:text-[10px] font-semibold tracking-widest text-white/40 uppercase leading-relaxed font-mono">
                 Delivery Uptime
               </div>
             </div>
@@ -187,7 +187,7 @@ export function Hero() {
         </div>
 
         {/* ── RIGHT COLUMN – Dashboard Card ── */}
-        <div className="flex-1 flex justify-center lg:justify-end w-full max-w-lg">
+        <div className="hidden lg:flex flex-1 justify-end w-full max-w-lg">
           <div className="relative w-full max-w-md">
 
             {/* Floating badge */}

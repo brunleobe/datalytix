@@ -70,7 +70,7 @@ export function IndustriesSection() {
           {industries.map((ind, idx) => (
             <div
               key={idx}
-              className="relative rounded-2xl p-8 h-80 md:h-[400px] flex flex-col justify-between overflow-hidden shadow-lg group cursor-pointer transition-all duration-300 hover:-translate-y-1"
+              className="relative rounded-2xl p-6 sm:p-8 h-64 sm:h-80 md:h-[400px] flex flex-col justify-between overflow-hidden shadow-lg group cursor-pointer transition-all duration-300 hover:-translate-y-1"
               style={{
                 backgroundColor: '#05120a',
                 border: '1px solid rgba(74, 222, 128, 0.12)',

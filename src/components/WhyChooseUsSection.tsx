@@ -34,9 +34,9 @@ export function WhyChooseUsSection() {
   ];
 
   return (
-    <section className="py-16 bg-white scroll-mt-32">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+    <section className="py-12 sm:py-16 bg-white scroll-mt-32">
+      <div className="container mx-auto px-5 sm:px-4 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16">
 
           {/* Left Column: Testimonial */}
           <div>

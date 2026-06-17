@@ -54,11 +54,11 @@ export function ContactAndCareers() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Header */}
-      <section className="relative bg-slate-900 py-24 overflow-hidden">
+      <section className="relative bg-slate-900 py-20 md:py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
-        <div className="container mx-auto px-4 max-w-7xl relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Connect With Us</h1>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <div className="container mx-auto px-5 sm:px-6 max-w-7xl relative z-10 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">Connect With Us</h1>
+          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Whether you have a question about our services or you're ready to join our innovative team, we're here to listen and grow together.
           </p>
         </div>
@@ -99,12 +99,12 @@ export function ContactAndCareers() {
       </section>
 
       {/* Main Dual Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col gap-32 max-w-4xl mx-auto">
+      <section className="py-16 sm:py-20 bg-slate-50">
+        <div className="container mx-auto px-5 sm:px-6 max-w-7xl">
+          <div className="flex flex-col gap-20 sm:gap-32 max-w-4xl mx-auto">
 
             {/* Careers Section */}
-            <div id="careers" className="scroll-mt-24 bg-white p-10 md:p-16 rounded-3xl border border-slate-100 shadow-xl relative overflow-hidden group">
+            <div id="careers" className="scroll-mt-24 bg-white p-7 sm:p-10 md:p-16 rounded-3xl border border-slate-100 shadow-xl relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110 duration-700"></div>
 
               <div className="relative z-10">
@@ -227,7 +227,7 @@ export function ContactAndCareers() {
                 <p className="text-slate-600 text-lg">Have a specific inquiry? Fill out the form below and we'll get back to you shortly.</p>
               </div>
 
-              <form className="space-y-6 bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6 bg-white p-7 sm:p-8 md:p-12 rounded-3xl border border-slate-100 shadow-sm" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="relative">
                     <label className="text-sm font-semibold text-slate-700 mb-2 block">Your Name</label>

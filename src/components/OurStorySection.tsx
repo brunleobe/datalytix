@@ -5,7 +5,7 @@ export function OurStorySection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Image with overlay badge */}
-          <div className="lg:col-span-5 relative w-full aspect-square md:aspect-[4/3] lg:aspect-square overflow-hidden rounded-2xl shadow-xl group border border-slate-200/50">
+          <div className="lg:col-span-5 relative w-full aspect-[3/2] sm:aspect-[4/3] lg:aspect-square overflow-hidden rounded-2xl shadow-xl group border border-slate-200/50">
             <img
               src="/office.png"
               alt="Datalytix office workspace"

@@ -43,11 +43,11 @@ export function OutcomeSection() {
 
         {/* Bar Chart Container */}
         <div className="w-full flex flex-col items-center">
-          <div className="w-full max-w-4xl h-80 flex items-end justify-between gap-2 sm:gap-4 md:gap-6 px-4 md:px-10 border-b border-slate-200 pb-4 relative">
-            
+          <div className="w-full max-w-4xl h-48 sm:h-64 md:h-80 flex items-end justify-between gap-1 sm:gap-2 md:gap-4 lg:gap-6 px-2 sm:px-4 md:px-10 border-b border-slate-200 pb-4 relative">
+
             {/* Tooltip Overlay */}
             {hoveredIdx !== null && (
-              <div 
+              <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#05120a] text-white px-4 py-2 rounded-lg text-xs font-mono shadow-xl border border-emerald-950/20 transition-all duration-300 animate-fade-in"
               >
                 Quarter {data[hoveredIdx].label} Impact: <span className="text-[#3cd882] font-bold">{data[hoveredIdx].value}</span>
@@ -56,14 +56,14 @@ export function OutcomeSection() {
 
             {/* Bars */}
             {data.map((bar, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="flex-1 flex flex-col items-center gap-4 h-full justify-end group cursor-pointer"
                 onMouseEnter={() => setHoveredIdx(idx)}
                 onMouseLeave={() => setHoveredIdx(null)}
               >
                 {/* Bar Element */}
-                <div 
+                <div
                   className={`w-full rounded-t-lg transition-all duration-500 origin-bottom ${bar.height} group-hover:scale-y-[1.03] group-hover:opacity-90`}
                   style={{
                     backgroundColor: bar.color,
@@ -72,7 +72,7 @@ export function OutcomeSection() {
                 />
 
                 {/* X Axis Label */}
-                <span 
+                <span
                   className="text-[11px] font-mono tracking-widest text-slate-400 group-hover:text-slate-800 transition-colors duration-300 font-semibold"
                   style={{ fontFamily: 'var(--f-mono)' }}
                 >

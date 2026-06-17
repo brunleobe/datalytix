@@ -30,15 +30,15 @@ function CompetencyRow({
   isImageLeft
 }: CompetencySectionProps) {
   const graphicCol = (
-    <div className="lg:col-span-5 flex items-center justify-center">
-      <div 
+    <div className="lg:col-span-5 flex items-center justify-center order-2 lg:order-none">
+      <div
         className="relative w-full aspect-[4/3] max-w-md rounded-[32px] overflow-hidden flex items-center justify-center p-8 shadow-xl border border-slate-100/50"
         style={{
           background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`
         }}
       >
         {/* Hatch Pattern Overlay */}
-        <div 
+        <div
           className="absolute inset-0 opacity-15 pointer-events-none"
           style={{
             backgroundImage: `repeating-linear-gradient(
@@ -50,7 +50,7 @@ function CompetencyRow({
             )`,
           }}
         />
-        
+
         {/* Soft Radial Ambient Highlight */}
         <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none"></div>
 
@@ -63,7 +63,7 @@ function CompetencyRow({
         </div>
 
         {/* Floating Metric Card (Bottom Right) */}
-        <div className="absolute bottom-10 right-6 bg-white px-5 py-4 rounded-2xl shadow-2xl border border-slate-100/60 flex flex-col gap-1 min-w-[140px] animate-float-reverse">
+        <div className="absolute bottom-10 right-3 sm:right-6 bg-white px-3 sm:px-5 py-3 sm:py-4 rounded-2xl shadow-2xl border border-slate-100/60 flex flex-col gap-1 min-w-[110px] sm:min-w-[140px] animate-float-reverse">
           <span className="text-3xl font-black text-slate-800 leading-none">
             {floatingMetric}
           </span>
@@ -76,7 +76,7 @@ function CompetencyRow({
   );
 
   const textCol = (
-    <div className="lg:col-span-7 flex flex-col justify-center">
+    <div className="lg:col-span-7 flex flex-col justify-center order-1 lg:order-none">
       {/* Eyebrow */}
       <div className="flex items-center gap-2.5 mb-5">
         <span className="w-6 h-[2px] bg-[#16a34a]"></span>
