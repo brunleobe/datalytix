@@ -1,6 +1,6 @@
 export function ContactHero() {
   return (
-    <section className="relative py-20 sm:py-24 md:py-32 overflow-hidden bg-[#05120a]">
+    <section className="-mt-16 relative pt-32 sm:pt-36 md:pt-44 pb-16 sm:pb-20 md:pb-28 overflow-hidden bg-[#05120a]">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b2414_1px,transparent_1px),linear-gradient(to_bottom,#0b2414_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_85%,transparent_100%)]" />
       {/* Right-side green glow */}

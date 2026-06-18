@@ -82,11 +82,11 @@ export function Hero() {
 
   return (
     <section
-      className="relative w-full overflow-hidden"
+      className="-mt-16 relative w-full overflow-hidden"
       style={{
         background: 'radial-gradient(ellipse 80% 60% at 80% 10%, rgba(22,101,52,0.55) 0%, rgba(5,18,10,1) 60%)',
         backgroundColor: '#05120a',
-        minHeight: 'calc(100vh - 64px)',
+        minHeight: '100vh',
       }}
     >
       {/* Particle canvas */}
@@ -122,7 +122,15 @@ export function Hero() {
           </p>
 
           {/* Headline */}
-          <h1 className="font-extrabold leading-[1.05] text-white mb-6" style={{ fontSize: 'clamp(2.2rem, 6vw, 5rem)' }}>
+          <h1
+            className="font-extrabold leading-[1.05]"
+            style={{
+              fontFamily: '"Space Grotesk", system-ui, sans-serif',
+              fontSize: 'clamp(3rem, 7vw, 6.5rem)',
+              color: '#f8fafd',
+              margin: '22.4px 0px 25.6px',
+            }}
+          >
             Complex IT<br />
             problems,<br />
             engineered<br />
@@ -131,7 +139,16 @@ export function Hero() {
           </h1>
 
           {/* Description */}
-          <p className="text-white/60 text-base leading-relaxed max-w-md mb-10">
+          <p
+            className="text-white/60 text-base leading-relaxed max-w-md mb-10"
+            style={{
+              fontFamily: '"Space Grotesk", system-ui, sans-serif',
+              fontSize: ' clamp(1.08rem, 1.4vw, 1.35rem)',
+              color: '#b9bec6',
+              margin: '22.4px 0px 25.6px',
+              maxWidth: '46ch',
+            }}
+          >
             Datalytix NG is an information-technology solutions delivery company certified across Oracle, Microsoft and
             Thomson Reuters — turning enterprise data into clarity, confidence and measurable outcomes.
           </p>
