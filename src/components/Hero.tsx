@@ -2,31 +2,6 @@ import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// Animated line chart path helper
-function SparkLine() {
-  return (
-    <svg viewBox="0 0 200 50" className="w-full h-10" fill="none">
-      <defs>
-        <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#4ade80" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M0 38 C20 38, 30 20, 50 22 C70 24, 80 35, 100 30 C120 25, 130 10, 150 14 C170 18, 185 28, 200 24"
-        stroke="#4ade80"
-        strokeWidth="2"
-        strokeLinecap="round"
-        fill="none"
-        className="hero-spark-line"
-      />
-      <path
-        d="M0 38 C20 38, 30 20, 50 22 C70 24, 80 35, 100 30 C120 25, 130 10, 150 14 C170 18, 185 28, 200 24 L200 50 L0 50 Z"
-        fill="url(#sparkGrad)"
-      />
-    </svg>
-  );
-}
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -110,13 +85,26 @@ export function Hero() {
         }}
       />
 
-      <div className="container mx-auto px-5 sm:px-6 lg:px-10 relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-12 py-16 sm:py-20 lg:py-28">
+      <div className="wrap relative z-10 flex flex-col lg:flex-row items-center gap-10 lg:gap-12 pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-48 lg:pb-28">
         {/* ── LEFT COLUMN ── */}
         <div className="flex-1 w-full max-w-2xl">
           {/* Eyebrow */}
           <p
             className="text-xs font-semibold tracking-[0.25em] uppercase mb-6"
-            style={{ color: 'rgba(74,222,128,0.7)' }}
+            style={{
+              color: '#19874d',
+              fontFamily: 'IBM Plex Mono, ui-monospace, monospace',
+              fontSize: '0.78rem',
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.6rem',
+              margin: '0',
+
+
+
+            }}
           >
             — IT Solutions Delivery · Lagos, Nigeria
           </p>
@@ -175,7 +163,13 @@ export function Hero() {
           </div>
 
           {/* Stats / Metrics */}
-          <div className="mt-12 lg:mt-16 grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-lg">
+          <div
+            className="mt-12 lg:mt-16 grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-lg"
+            style={{
+              color: '#fdf9fa',
+              fontFamily: '"Instrument Sans", system-ui, sans-serif',
+
+            }}>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white mb-2 font-mono">
                 40<span className="text-[#3cd882]">+</span>
@@ -205,84 +199,140 @@ export function Hero() {
 
         {/* ── RIGHT COLUMN – Dashboard Card ── */}
         <div className="hidden lg:flex flex-1 justify-end w-full max-w-lg">
-          <div className="relative w-full max-w-md">
+          <div className="relative w-full max-w-[480px]" style={{ paddingBottom: '100px' }}>
 
-            {/* Floating badge */}
+            {/* ── Big background card with hatch ── */}
             <div
-              className="absolute -top-4 right-6 z-20 flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold shadow-2xl"
-              style={{ background: '#fff', color: '#111' }}
-            >
-              <span className="w-4 h-4 rounded-sm bg-[#4ade80] flex items-center justify-center">
-                <svg viewBox="0 0 10 10" className="w-2.5 h-2.5" fill="none">
-                  <polyline points="1,7 4,4 6,6 9,2" stroke="#05120a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              BI &amp; Analytics live
-            </div>
-
-            {/* Main card */}
-            <div
-              className="rounded-2xl p-6 pt-10 overflow-hidden"
+              className="relative rounded-3xl overflow-hidden"
               style={{
-                background: 'rgba(10,30,18,0.85)',
-                border: '1px solid rgba(74,222,128,0.15)',
-                backdropFilter: 'blur(16px)',
-                boxShadow: '0 32px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(74,222,128,0.1)',
+                height: '420px',
+                background: 'rgba(8, 24, 14, 0.9)',
+                border: '1px solid rgba(74,222,128,0.12)',
+                boxShadow: '0 40px 100px rgba(0,0,0,0.55)',
               }}
             >
-              {/* Hatch pattern inside card */}
+              {/* Dense diagonal hatch fill */}
               <div
-                className="absolute inset-0 rounded-2xl pointer-events-none"
+                className="absolute inset-0"
                 style={{
                   backgroundImage: `repeating-linear-gradient(
                     -45deg,
-                    rgba(74,222,128,0.04) 0px,
-                    rgba(74,222,128,0.04) 1px,
+                    rgba(74,222,128,0.07) 0px,
+                    rgba(74,222,128,0.07) 1px,
                     transparent 1px,
-                    transparent 10px
+                    transparent 8px
                   )`,
                 }}
               />
-
-              {/* Metric */}
-              <div className="relative z-10">
-                <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/40 mb-1">Data Throughput</p>
-                <div className="flex items-end gap-3 mb-4">
-                  <span className="text-5xl font-extrabold text-white leading-none">2.4</span>
-                  <span className="text-2xl font-bold text-white/60 mb-1">TB/s</span>
-                  <span className="ml-auto flex items-center gap-1 text-xs font-semibold text-[#4ade80]">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#4ade80] animate-pulse" />
-                    LIVE
-                  </span>
-                </div>
-
-                {/* Sparkline */}
-                <div className="mb-5">
-                  <SparkLine />
-                </div>
-
-                {/* Tags */}
-                <div className="flex items-center gap-2 flex-wrap">
-                  {['PRETO', 'DATA CENTER', 'SERVER ROOM'].map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-[10px] font-semibold tracking-widest uppercase text-white/40"
-                    >
-                      {tag} {tag !== 'SERVER ROOM' && <span className="text-white/20">·</span>}
-                    </span>
-                  ))}
-                </div>
-              </div>
             </div>
 
-            {/* Glow beneath card */}
+            {/* ── Floating badge – top right ── */}
             <div
-              className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 pointer-events-none"
+              className="absolute z-20 flex items-center gap-3 shadow-xl"
               style={{
-                background: 'radial-gradient(ellipse, rgba(74,222,128,0.25) 0%, transparent 70%)',
-                filter: 'blur(12px)',
+                top: '24px',
+                right: '-16px',
+                background: '#ffffff',
+                borderRadius: '14px',
+                padding: '10px 18px 10px 10px',
               }}
-            />
+            >
+              <span
+                className="flex items-center justify-center flex-shrink-0"
+                style={{ width: '36px', height: '36px', borderRadius: '10px', background: '#3cd882' }}
+              >
+                <svg viewBox="0 0 16 16" width="18" height="18" fill="none">
+                  <path d="M8 12V4M4 8l4-4 4 4" stroke="#05120a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <span style={{ fontWeight: 600, fontSize: '0.9rem', color: '#0d1117', whiteSpace: 'nowrap' }}>
+                BI &amp; Analytics live
+              </span>
+            </div>
+
+            {/* ── Metric card – overlapping bottom-left ── */}
+            <div
+              className="absolute z-20 rounded-2xl overflow-hidden"
+              style={{
+                bottom: '8px',
+                left: '-20px',
+                width: '300px',
+                background: 'rgba(8, 18, 12, 0.97)',
+                border: '1px solid rgba(74,222,128,0.14)',
+                backdropFilter: 'blur(20px)',
+                boxShadow: '0 24px 60px rgba(0,0,0,0.5)',
+                padding: '20px 22px 18px',
+              }}
+            >
+              {/* Label row */}
+              <div className="flex items-center justify-between mb-3">
+                <span style={{
+                  fontFamily: 'IBM Plex Mono, monospace',
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  color: 'rgba(255,255,255,0.45)',
+                  fontWeight: 500,
+                }}>
+                  Data Throughput
+                </span>
+                <span className="w-2.5 h-2.5 rounded-full animate-pulse" style={{ background: '#3cd882' }} />
+              </div>
+
+              {/* Value */}
+              <div className="flex items-baseline gap-1 mb-4">
+                <span style={{ fontSize: '3rem', fontWeight: 800, color: '#ffffff', lineHeight: 1 }}>2.4</span>
+                <span style={{ fontSize: '1.6rem', fontWeight: 700, color: '#3cd882', lineHeight: 1 }}> TB/s</span>
+              </div>
+
+              {/* Sparkline */}
+              <svg viewBox="0 0 260 52" className="w-full" fill="none">
+                <defs>
+                  <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#3cd882" stopOpacity="0.25" />
+                    <stop offset="100%" stopColor="#3cd882" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M0 40 C30 40, 45 28, 70 26 C95 24, 110 36, 135 30 C160 24, 175 10, 200 13 C225 16, 245 26, 260 22"
+                  stroke="#3cd882" strokeWidth="2.5" strokeLinecap="round" fill="none"
+                  className="hero-spark-line"
+                />
+                <path
+                  d="M0 40 C30 40, 45 28, 70 26 C95 24, 110 36, 135 30 C160 24, 175 10, 200 13 C225 16, 245 26, 260 22 L260 52 L0 52 Z"
+                  fill="url(#sg2)"
+                />
+              </svg>
+            </div>
+
+            {/* ── Tags pill – below ── */}
+            <div
+              className="absolute z-10 flex items-center gap-2"
+              style={{
+                bottom: '-8px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                background: 'rgba(10,20,14,0.9)',
+                border: '1px solid rgba(74,222,128,0.12)',
+                borderRadius: '100px',
+                padding: '8px 18px',
+                whiteSpace: 'nowrap',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: '#3cd882' }} />
+              <span style={{
+                fontFamily: 'IBM Plex Mono, monospace',
+                fontSize: '0.62rem',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                color: 'rgba(255,255,255,0.5)',
+                fontWeight: 500,
+              }}>
+                Photo · Data Center / Server Room
+              </span>
+            </div>
+
           </div>
         </div>
       </div>

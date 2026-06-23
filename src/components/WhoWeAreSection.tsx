@@ -36,14 +36,34 @@ export function WhoWeAreSection() {
               </span>
             </div>
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#05120a] leading-[1.15] tracking-tight">
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#05120a] leading-[1.15] tracking-tight"
+              style={{
+                fontFamily: '"Space Grotesk", system-ui, sans-serif',
+                fontSize: 'clamp(1.9rem, 3.4vw, 3rem)',
+                fontWeight: 600,
+                lineHeight: 1.04,
+                letterSpacing: '-0.02em',
+              }}
+            >
               A solutions partner that holds integrity at its core.
             </h2>
           </div>
-          
+
           <div className="lg:col-span-5 lg:pt-10">
             {/* Description */}
-            <p className="text-slate-600 text-base md:text-[17px] leading-relaxed font-sans">
+            <p
+              className="text-slate-600 text-base md:text-[17px] leading-relaxed font-sans"
+              style={{
+                display: 'block',
+                marginBlockStart: '1em',
+                marginBlockEnd: '1em',
+                marginInlineStart: '0px',
+                marginInlineEnd: '0px',
+                unicodeBidi: 'isolate',
+
+              }}
+            >
               Every engagement runs through a comprehensive project-management cycle built on continuous
               communication — so expectations are managed and deliverables land on time, on budget.
             </p>
@@ -56,15 +76,25 @@ export function WhoWeAreSection() {
             <div key={idx} className="flex flex-col">
               {/* Green Divider */}
               <div className="w-full h-[1.5px] bg-[#3cd882] mb-6"></div>
-              
+
               {/* Stat Value */}
-              <div className="text-3xl md:text-4xl font-bold text-slate-800 font-sans mb-3 flex items-baseline">
+              <h3
+                className="text-3xl md:text-4xl text-slate-800 mb-3 flex items-baseline"
+                style={{
+                  fontFamily: '"Space Grotesk", system-ui, sans-serif',
+                  fontWeight: 500,
+                  lineHeight: 1.04,
+                  letterSpacing: '-0.02em',
+                  fontSize: '0.98rem',
+
+                }}
+              >
                 {stat.value}
                 {stat.suffix && (
                   <span className="text-[#3cd882] font-semibold ml-0.5">{stat.suffix}</span>
                 )}
-              </div>
-              
+              </h3>
+
               {/* Stat Label */}
               <div className="text-xs md:text-sm text-slate-500 leading-normal max-w-[200px] font-sans">
                 {stat.label}

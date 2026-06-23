@@ -41,7 +41,7 @@ export function Navbar() {
         boxShadow: scrolled ? '0 2px 16px rgba(0,0,0,0.08)' : 'none',
       }}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between h-16">
+      <div className="container mx-auto px-6 flex items-center justify-between h-20">
         {/* Logo */}
         <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="flex items-center gap-2 hover:opacity-90 transition-opacity">
           <img src={logoSrc} alt="Datalytix Logo" className="h-8 w-auto object-contain" />
@@ -56,12 +56,21 @@ export function Navbar() {
               to={link.path}
               end={link.path === '/'}
               onClick={(e) => handleNavClick(e, link.path)}
+              style={{
+                fontFamily: 'var(--f-display, "Space Grotesk", system-ui, sans-serif)',
+                fontWeight: 500,
+                fontSize: '.98rem',
+                padding: '.5rem .9rem',
+                borderRadius: '100px',
+                position: 'relative',
+                transition: 'color .3s, background .3s',
+              }}
               className={({ isActive }) => {
                 if (scrolled) {
-                  return `text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full relative group ${isActive ? 'text-[#16a34a] hover:bg-black/5' : 'text-[#05120a]/70 hover:text-[#05120a] hover:bg-black/5'
+                  return `transition-all duration-300 relative group ${isActive ? 'text-[#16a34a] hover:bg-black/5' : 'text-[#05120a]/70 hover:text-[#05120a] hover:bg-black/5'
                     }`;
                 }
-                return `text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full relative group ${isActive ? 'text-[#4ade80] hover:bg-white/10' : 'text-white/80 hover:text-white hover:bg-white/10'
+                return `transition-all duration-300 relative group ${isActive ? 'text-[#4ade80] hover:bg-white/10' : 'text-white/80 hover:text-white hover:bg-white/10'
                   }`;
               }}
             >
@@ -98,7 +107,6 @@ export function Navbar() {
               backgroundColor: '#44de7f',
               color: '#04070e',
               boxShadow: '0 10px 30px -12px oklch(0.80 0.185 152 / .7)',
-              marginTop: "1rem",
             }}
           >
             Book a consultation <span style={{ lineHeight: 1 }}>→</span>

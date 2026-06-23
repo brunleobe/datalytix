@@ -9,12 +9,23 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --f-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --f-display: 'Space Grotesk', system-ui, sans-serif;
+
+  /* Layout tokens */
+  --maxw: 1280px;
+  --pad-x: clamp(1.25rem, 5vw, 4rem);
 }
 
 @layer base {
   body {
     @apply font-sans text-xl text-slate-800 bg-white;
   }
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
 }
 
 @keyframes marquee {
