@@ -22,13 +22,18 @@ export function ContactForm() {
     form.message.trim() !== '';
 
   const inputClass =
-    'w-full bg-slate-50 border border-slate-200 rounded-lg py-3 px-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#3cd882] focus:ring-2 focus:ring-[#3cd882]/20 transition-all';
+    'w-full font-sans text-1rem text-slate-800 rounded-[11px] py-[0.85rem] px-4 border border-slate-300 bg-slate-50 transition-[border-color,box-shadow,background] duration-300 focus:outline-none focus:border-[#3cd882] focus:ring-2 focus:ring-[#3cd882]/20 placeholder-slate-400';
+
+  const inputStyle = {
+    fontFamily: "'Instrument Sans', system-ui, sans-serif",
+    fontSize: '1rem',
+  };
 
   const labelClass =
-    'block text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400 mb-2 font-mono';
+    'block text-[0.72rem] display-block tracking-widest font-bold tracking-[0.2em] uppercase text-slate-400 mb-2 font-mono';
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-7 sm:p-10">
+    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm" style={{ padding: '30.72px', borderWidth: '0.8px' }}>
       <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
 
         {/* Row 1: Full Name + Company */}
@@ -43,6 +48,7 @@ export function ContactForm() {
               placeholder="Jane Doe"
               required
               className={inputClass}
+              style={inputStyle}
             />
           </div>
           <div>
@@ -52,6 +58,13 @@ export function ContactForm() {
               name="company"
               placeholder="Company Ltd."
               className={inputClass}
+              style={{
+                ...inputStyle,
+                fontFamily: "'IBM Plex Mono', ui-monospace, monospace",
+                color: "#646970",
+                fontSize: "1rem",
+
+              }}
             />
           </div>
         </div>
@@ -68,6 +81,7 @@ export function ContactForm() {
               placeholder="jane@company.com"
               required
               className={inputClass}
+              style={inputStyle}
             />
           </div>
           <div>
@@ -77,6 +91,7 @@ export function ContactForm() {
               name="phone"
               placeholder="+234 ..."
               className={inputClass}
+              style={inputStyle}
             />
           </div>
         </div>
@@ -91,6 +106,7 @@ export function ContactForm() {
               onChange={handleChange}
               required
               className={`${inputClass} appearance-none pr-10`}
+              style={inputStyle}
             >
               <option value="Data Management & Analytics">Data Management & Analytics</option>
               <option value="Data Warehousing">Data Warehousing</option>
@@ -120,6 +136,7 @@ export function ContactForm() {
             placeholder="A few lines about your goals, timeline and current setup..."
             required
             className={`${inputClass} resize-none`}
+            style={inputStyle}
           />
         </div>
 
@@ -127,11 +144,9 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={!isValid}
-          className={`w-full font-semibold py-4 rounded-xl flex items-center justify-center gap-2 text-sm transition-all duration-300 ${
-            isValid
-              ? 'bg-[#3cd882] hover:bg-[#2ec872] text-[#05120a] shadow-lg shadow-[#3cd882]/30 hover:shadow-[#3cd882]/50 cursor-pointer active:scale-[0.98]'
-              : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-          }`}
+          className="w-full font-semibold px-[1.6em] py-[0.95em] rounded-[100px] flex items-center 
+         justify-center gap-2 text-sm transition-all duration-300 bg-[#35ce6f] text-[#05120a] 
+         shadow-lg shadow-[#45de7f]/50 cursor-pointer active:scale-[0.98]"
         >
           Send message &nbsp;→
         </button>

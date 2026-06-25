@@ -3,25 +3,25 @@ export function ContactInfo() {
     <div className="flex flex-col gap-4">
 
       {/* Email Us */}
-      <div className="bg-white rounded-xl border border-slate-100 px-6 py-5">
+      <div className="bg-white rounded-xl border-[1px] solid border-[#d5d8db] rounded-[18px] px-6 py-5">
         <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#3cd882] font-mono mb-1">Email Us</p>
-        <a href="mailto:kay@datalytixng.com" className="text-sm font-bold text-slate-800 hover:text-[#3cd882] transition-colors">
+        <a href="mailto:kay@datalytixng.com" className="text-[1.2rem] font-bold text-slate-800 hover:text-[#3cd882] transition-colors">
           kay@datalytixng.com
         </a>
       </div>
 
       {/* Call Us */}
-      <div className="bg-white rounded-xl border border-slate-100 px-6 py-5">
+      <div className="bg-white rounded-xl border-[1px] solid border-[#d5d8db] rounded-[18px] px-6 py-5">
         <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#3cd882] font-mono mb-1">Call Us</p>
-        <a href="tel:+2348034174300" className="text-sm font-bold text-slate-800 hover:text-[#3cd882] transition-colors">
+        <a href="tel:+2348034174300" className="text-[1.2rem] font-bold text-slate-800 hover:text-[#3cd882] transition-colors">
           +234 (0) 803 417 4300
         </a>
       </div>
 
       {/* Visit Us */}
-      <div className="bg-white rounded-xl border border-slate-100 px-6 py-5">
+      <div className="bg-white rounded-xl border-[1px] solid border-[#d5d8db] rounded-[18px] px-6 py-5">
         <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#3cd882] font-mono mb-1">Visit Us</p>
-        <p className="text-sm font-bold text-slate-800">11 Kudirat Abiola Way, Oregun, Ikeja, Lagos, Nigeria</p>
+        <p className="text-[1.2rem] font-bold text-slate-800">11 Kudirat Abiola Way, Oregun, Ikeja, Lagos, Nigeria</p>
       </div>
 
       {/* Office Hours */}
@@ -43,40 +43,39 @@ export function ContactInfo() {
         </div>
       </div>
 
-      {/* Map Placeholder — links to Google Maps */}
-      <a
-        href="https://www.google.com/maps/search/?api=1&query=11+Kudirat+Abiola+Way%2C+Oregun%2C+Ikeja%2C+Lagos%2C+Nigeria"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative rounded-xl overflow-hidden h-44 flex items-end p-5 cursor-pointer hover:opacity-90 transition-opacity duration-300 group"
-        style={{
-          background: 'linear-gradient(135deg, #07170c 0%, #0d2717 100%)',
-          backgroundImage: `repeating-linear-gradient(
-            -45deg,
-            rgba(60,216,130,0.035) 0px,
-            rgba(60,216,130,0.035) 1.5px,
-            transparent 1.5px,
-            transparent 12px
-          )`,
-        }}
-      >
-        {/* Ambient glow */}
-        <div
-          className="absolute inset-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-150"
-          style={{ background: 'radial-gradient(ellipse at 60% 60%, rgba(60,216,130,0.14) 0%, transparent 70%)' }}
-        />
+      {/* Map Embed - Dark Style */}
+      <div className="relative rounded-xl overflow-hidden h-44 border border-slate-100 shadow-sm group">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3812838965683!2d3.3643761749836154!3d6.599446893399066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b93c52a0a2df3%3A0xaad579040fa781eb!2s11%20Kudirat%20Abiola%20Way%2C%20Oregun%2C%20Ikeja%20101233%2C%20Lagos!5e0!3m2!1sen!2sng!4v1719149000000!5m2!1sen!2sng"
+          width="100%"
+          height="100%"
+          style={{
+            border: 0,
+            filter: 'grayscale(1) invert(0.9) contrast(1.2) brightness(0.9)'
+          }}
+          allowFullScreen={false}
+          loading="lazy"
+          title="Datalytix Lagos Office Location"
+        ></iframe>
+
         {/* Label badge */}
-        <div className="relative z-10 flex items-center gap-2 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-lg border border-white/10">
+        <div className="absolute bottom-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 bg-black/85 backdrop-blur-sm rounded-lg border border-white/10 pointer-events-none">
           <span className="w-1.5 h-1.5 rounded-full bg-[#3cd882] animate-pulse" />
           <span className="text-[9px] font-bold tracking-[0.25em] text-white/70 uppercase font-mono">
             Map · Lagos Office Location
           </span>
         </div>
-        {/* Open-in-maps hint */}
-        <span className="absolute top-4 right-4 text-[9px] font-bold tracking-[0.2em] uppercase font-mono text-white/30 group-hover:text-[#3cd882]/70 transition-colors duration-300">
+
+        {/* Open-in-maps hint link */}
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=11+Kudirat+Abiola+Way%2C+Oregun%2C+Ikeja%2C+Lagos%2C+Nigeria"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-4 right-4 z-10 text-[9px] font-bold tracking-[0.2em] uppercase font-mono text-white/40 bg-black/60 backdrop-blur-sm px-2 py-1 rounded border border-white/10 hover:text-[#3cd882] transition-colors duration-300"
+        >
           Open in Maps ↗
-        </span>
-      </a>
+        </a>
+      </div>
 
     </div>
   );
