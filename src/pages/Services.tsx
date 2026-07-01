@@ -4,6 +4,7 @@ import { CompetencyDetailedList } from '../components/CompetencyDetailedList';
 import { ElevenCompetencies } from '../components/ElevenCompetencies';
 import { EngagementModels } from '../components/EngagementModels';
 import { ConsultationCta } from '../components/ConsultationCta';
+import { ScrollReveal } from '../components/ScrollReveal';
 
 export function Services() {
   useEffect(() => {
@@ -16,16 +17,24 @@ export function Services() {
       <ServicesHero />
 
       {/* Alternating detailed competency sections */}
-      <CompetencyDetailedList />
+      <ScrollReveal animation="fade-up">
+        <CompetencyDetailedList />
+      </ScrollReveal>
 
       {/* Eleven Competencies List */}
-      <ElevenCompetencies />
+      <ScrollReveal animation="fade-up">
+        <ElevenCompetencies />
+      </ScrollReveal>
 
       {/* Engagement Models */}
-      <EngagementModels />
+      <ScrollReveal animation="fade-up">
+        <EngagementModels />
+      </ScrollReveal>
 
       {/* CTA Section */}
-      <ConsultationCta />
+      <ScrollReveal animation="fade-up">
+        <ConsultationCta />
+      </ScrollReveal>
 
     </div>
   );

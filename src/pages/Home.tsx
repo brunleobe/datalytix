@@ -7,6 +7,7 @@ import { DeliverySection } from '../components/DeliverySection';
 import { OutcomeSection } from '../components/OutcomeSection';
 import { CtaSection } from '../components/CtaSection';
 import { PartnersSection } from '../components/PartnersSection';
+import { ScrollReveal } from '../components/ScrollReveal';
 
 export function Home() {
   useEffect(() => {
@@ -25,13 +26,28 @@ export function Home() {
   return (
     <>
       <Hero />
-      <PartnersSection />
-      <WhoWeAreSection />
-      <ServicesSection />
-      <IndustriesSection />
-      <DeliverySection />
-      <OutcomeSection />
-      <CtaSection />
+      <ScrollReveal animation="fade-up">
+        <PartnersSection />
+      </ScrollReveal>
+      <ScrollReveal animation="fade-up">
+        <WhoWeAreSection />
+      </ScrollReveal>
+      <ScrollReveal animation="fade-up">
+        <ServicesSection />
+      </ScrollReveal>
+      <ScrollReveal animation="fade-up">
+        <IndustriesSection />
+      </ScrollReveal>
+      <ScrollReveal animation="fade-up">
+        <DeliverySection />
+      </ScrollReveal>
+      <ScrollReveal animation="fade-up">
+        <OutcomeSection />
+      </ScrollReveal>
+      <ScrollReveal animation="fade-up">
+        <CtaSection />
+      </ScrollReveal>
     </>
   );
 }
+

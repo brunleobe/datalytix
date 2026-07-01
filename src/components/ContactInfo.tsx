@@ -5,7 +5,11 @@ export function ContactInfo() {
       {/* Email Us */}
       <div className="bg-white rounded-xl border-[1px] solid border-[#d5d8db] rounded-[18px] px-6 py-5">
         <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#3cd882] font-mono mb-1">Email Us</p>
-        <a href="mailto:kay@datalytixng.com" className="text-[1.2rem] font-bold text-slate-800 hover:text-[#3cd882] transition-colors">
+        <a
+          href="mailto:kay@datalytixng.com"
+          className="text-[1.2rem] font-[600] text-slate-800 hover:text-[#3cd882] transition-colors"
+          style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+        >
           kay@datalytixng.com
         </a>
       </div>
@@ -13,7 +17,11 @@ export function ContactInfo() {
       {/* Call Us */}
       <div className="bg-white rounded-xl border-[1px] solid border-[#d5d8db] rounded-[18px] px-6 py-5">
         <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#3cd882] font-mono mb-1">Call Us</p>
-        <a href="tel:+2348034174300" className="text-[1.2rem] font-bold text-slate-800 hover:text-[#3cd882] transition-colors">
+        <a
+          href="tel:+2348034174300"
+          className="text-[1.2rem] font-[600] text-slate-800 hover:text-[#3cd882] transition-colors"
+          style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+        >
           +234 (0) 803 417 4300
         </a>
       </div>
@@ -21,7 +29,12 @@ export function ContactInfo() {
       {/* Visit Us */}
       <div className="bg-white rounded-xl border-[1px] solid border-[#d5d8db] rounded-[18px] px-6 py-5">
         <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-[#3cd882] font-mono mb-1">Visit Us</p>
-        <p className="text-[1.2rem] font-bold text-slate-800">11 Kudirat Abiola Way, Oregun, Ikeja, Lagos, Nigeria</p>
+        <p
+          className="text-[1.2rem] font-[600] text-slate-800"
+          style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+        >
+          11 Kudirat Abiola Way, Oregun, Ikeja, Lagos, Nigeria
+        </p>
       </div>
 
       {/* Office Hours */}

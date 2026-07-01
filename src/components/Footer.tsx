@@ -136,7 +136,7 @@ export function Footer() {
                 <a
                   href="mailto:kay@datalytixng.com"
                   className="text-sm transition-colors duration-200"
-                  style={{ color: 'rgba(255,255,255,0.55)' }}
+                  style={{ color: 'rgba(255,255,255,0.55)', fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                 >
@@ -147,14 +147,14 @@ export function Footer() {
                 <a
                   href="tel:+2348034174300"
                   className="text-sm transition-colors duration-200"
-                  style={{ color: 'rgba(255,255,255,0.55)' }}
+                  style={{ color: 'rgba(255,255,255,0.55)', fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.55)')}
                 >
                   +234 (0) 803 417 4300
                 </a>
               </li>
-              <li className="text-sm" style={{ color: 'rgba(255,255,255,0.55)' }}>
+              <li className="text-sm" style={{ color: 'rgba(255,255,255,0.55)', fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>
                 Lagos, Nigeria
               </li>
             </ul>

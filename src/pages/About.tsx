@@ -6,6 +6,7 @@ import { StatsSection } from '../components/StatsSection';
 import { TeamSection } from '../components/TeamSection';
 import { AccreditationSection } from '../components/AccreditationSection';
 import { AboutCta } from '../components/AboutCta';
+import { ScrollReveal } from '../components/ScrollReveal';
 
 export function About() {
   useEffect(() => {
@@ -30,34 +31,56 @@ export function About() {
             <span className="text-slate-400">About</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight max-w-4xl tracking-tight">
-            We hold integrity at our core —<br className="hidden md:inline" /> and let our <span className="text-[#3cd882]">work prove it.</span>
+          <h1
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-6 max-w-4xl"
+            style={{
+              fontFamily: "'Space Grotesk', system-ui, sans-serif",
+              fontWeight: 600,
+              lineHeight: 1.04,
+              letterSpacing: '-0.02em',
+              marginTop: '1.3rem',
+              marginBottom: '1.4rem',
+              fontSize: 'clamp(2.4rem, 5vw, 4.2rem)'
+            }}
+          >
+            We hold integrity at our core<br className="hidden md:inline" /> — and let our <span className="text-[#3cd882]">work prove it.</span>
           </h1>
 
-          <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed">
+          <p
+            className="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl leading-relaxed"
+            style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}
+          >
             Datalytix NG is an <span className="text-slate-200 font-medium">information-technology solutions delivery company</span> with over 40 years of combined experience, helping organisations bring simple solutions to complex IT problems.
           </p>
         </div>
       </section>
 
       {/* Main Sections */}
-      <OurStorySection />
+      <ScrollReveal animation="fade-up">
+        <OurStorySection />
+      </ScrollReveal>
 
-      {/* Values Section */}
-      <ValuesSection />
+      <ScrollReveal animation="fade-up">
+        <ValuesSection />
+      </ScrollReveal>
 
-      {/* Stats Section */}
-      <StatsSection />
+      <ScrollReveal animation="fade-up">
+        <StatsSection />
+      </ScrollReveal>
 
-      {/* Team Section */}
-      <TeamSection />
+      <ScrollReveal animation="fade-up">
+        <TeamSection />
+      </ScrollReveal>
 
-      {/* Accreditation Section */}
-      <AccreditationSection />
+      <ScrollReveal animation="fade-up">
+        <AccreditationSection />
+      </ScrollReveal>
 
-      {/* About CTA Section */}
-      <AboutCta />
+      <ScrollReveal animation="fade-up">
+        <AboutCta />
+      </ScrollReveal>
 
     </div>
   );
 }
+
