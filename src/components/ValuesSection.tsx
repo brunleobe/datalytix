@@ -23,28 +23,28 @@ export function ValuesSection() {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-[#f8fafc] scroll-mt-24" id="values">
+    <section className="py-20 md:py-28 bg-[#fdf9fa] scroll-mt-24" id="values">
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
-        
+
         {/* Header Row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 md:mb-20">
           <div className="lg:col-span-7">
             {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-xs font-bold tracking-[0.25em] text-[#16a34a] uppercase font-mono">
+              <span className="text-[0.78rem] font-normal tracking-[0.25em] text-[#16a34a] uppercase font-mono margin-top-[1rem]">
                 — What Guides Us
               </span>
             </div>
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#05120a] leading-[1.15] tracking-tight">
+            <h2 className="text-[34.816px] max-w-[16ch] sm:text-4xl font-semibold md:text-5xl font-semibold margin-top-[1rem] text-[#05120a] leading-[1.15] tracking-tight">
               Values demonstrated,<br className="hidden sm:inline" /> not declared.
             </h2>
           </div>
-          
+
           <div className="lg:col-span-5 lg:pb-2">
             {/* Subtitle */}
             <p className="text-slate-500 text-base md:text-lg leading-relaxed">
-              The attributes our clients feel in every engagement.
+              The attributes our clients feel in every<br /> engagement.
             </p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export function ValuesSection() {
           {values.map((value, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-100/80 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[200px]"
+              className="bg-white border border-solid-1px border-[#dbd6d7] rounded-2xl py-[1.8rem] px-[1.5rem] shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between min-h-[200px]"
             >
               <div>
                 {/* Card Top: Number and Accent Bar */}
@@ -64,13 +64,15 @@ export function ValuesSection() {
                   </span>
                   <span className="w-6 h-[2px] bg-[#3cd882] rounded-full"></span>
                 </div>
-                
+
                 {/* Heading */}
-                <h3 className="text-lg md:text-xl font-bold text-slate-800 mb-3 font-sans">
-                  {value.title}
+                <h3 className="text-[1.3rem] md:text-xl font-semibold text-slate-800 mb-3 font-sans" >
+                  <span style={{ fontFamily: "'Space Grotesk', system-ui, sans-serif" }}>
+                    {value.title}
+                  </span>
                 </h3>
               </div>
-              
+
               {/* Description */}
               <p className="text-slate-500 text-[13px] md:text-[14px] leading-relaxed font-sans mt-auto">
                 {value.description}

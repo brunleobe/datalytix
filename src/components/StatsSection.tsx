@@ -25,15 +25,20 @@ export function StatsSection() {
   return (
     <section className="relative py-24 md:py-32 bg-[#05120a] overflow-hidden" id="stats">
       {/* Background Grid Lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b2414_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_85%,transparent_100%)]"></div>
+      {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#0b2414_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_85%,transparent_100%)]"></div> */}
 
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10">
-        
+
         {/* Header Row */}
         <div className="mb-20">
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-xs font-bold tracking-[0.25em] text-[#3cd882] uppercase font-mono">
+            <span
+              className="text-[0.78rem] font-bold tracking-[0.25em] text-[#19874d] inline-flex uppercase font-mono"
+              style={{
+                fontFamily: "'IBM Plex Mono', ui-monospace, monospace"
+              }}
+            >
               — By the Numbers
             </span>
           </div>
@@ -49,12 +54,12 @@ export function StatsSection() {
             <div key={idx} className="flex flex-col">
               {/* Green Divider */}
               <div className="w-full h-[1.5px] bg-[#3cd882] mb-8"></div>
-              
+
               {/* Stat Value */}
               <div className="text-4xl md:text-5xl font-bold text-white mb-2 font-sans tracking-tight">
                 {stat.value}
               </div>
-              
+
               {/* Suffix (stacked vertically below the number) */}
               {stat.suffix ? (
                 <div className="text-xl font-bold text-[#3cd882] mb-2 font-sans">
@@ -66,7 +71,7 @@ export function StatsSection() {
                   &nbsp;
                 </div>
               )}
-              
+
               {/* Stat Label */}
               <div className="text-xs md:text-sm text-slate-400 leading-normal tracking-wide font-sans mt-1">
                 {stat.label}
