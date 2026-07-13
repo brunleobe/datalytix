@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export function AboutCta() {
   return (
-    <section className="pb-20 md:pb-28 bg-white scroll-mt-24">
+    <section className="pt-16 md:pt-20 pb-20 md:pb-28 bg-white scroll-mt-24">
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
         <div
           className="relative rounded-[32px] overflow-hidden text-center border border-white/5 px-6 py-14 sm:px-10 sm:py-20 md:px-16 md:py-24"

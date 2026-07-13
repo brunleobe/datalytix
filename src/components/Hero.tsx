@@ -211,9 +211,24 @@ export function Hero() {
                 boxShadow: '0 40px 100px rgba(0,0,0,0.55)',
               }}
             >
+              {/* Data Center Image */}
+              <img
+                src="/datacenter_hero.png"
+                alt="Photo · Data Center / Server Room"
+                className="absolute inset-0 w-full h-full object-cover opacity-60 transition-opacity duration-700 hover:opacity-85"
+              />
+
+              {/* Dark gradient overlay to blend image edges */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle at center, transparent 20%, rgba(8, 24, 14, 0.85) 100%)',
+                }}
+              />
+
               {/* Dense diagonal hatch fill */}
               <div
-                className="absolute inset-0"
+                className="absolute inset-0 pointer-events-none"
                 style={{
                   backgroundImage: `repeating-linear-gradient(
                     -45deg,
@@ -303,34 +318,6 @@ export function Hero() {
                   fill="url(#sg2)"
                 />
               </svg>
-            </div>
-
-            {/* ── Tags pill – below ── */}
-            <div
-              className="absolute z-10 flex items-center gap-2"
-              style={{
-                bottom: '-8px',
-                left: '50%',
-                transform: 'translateX(-50%)',
-                background: 'rgba(10,20,14,0.9)',
-                border: '1px solid rgba(74,222,128,0.12)',
-                borderRadius: '100px',
-                padding: '8px 18px',
-                whiteSpace: 'nowrap',
-                backdropFilter: 'blur(10px)',
-              }}
-            >
-              <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: '#3cd882' }} />
-              <span style={{
-                fontFamily: 'IBM Plex Mono, monospace',
-                fontSize: '0.62rem',
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: 'rgba(255,255,255,0.5)',
-                fontWeight: 500,
-              }}>
-                Photo · Data Center / Server Room
-              </span>
             </div>
 
           </div>

@@ -15,6 +15,7 @@ interface CompetencySectionProps {
   floatingMetric: string;
   floatingMetricLabel: string;
   isImageLeft: boolean;
+  image: string;
 }
 
 function CompetencyRow({
@@ -27,16 +28,23 @@ function CompetencyRow({
   floatingLabel,
   floatingMetric,
   floatingMetricLabel,
-  isImageLeft
+  isImageLeft,
+  image
 }: CompetencySectionProps) {
   const graphicCol = (
     <div className="lg:col-span-5 flex items-center justify-center order-2 lg:order-none">
       <div
-        className="relative w-full aspect-[4/3] max-w-md rounded-[32px] overflow-hidden flex items-center justify-center p-8 shadow-xl border border-slate-100/50"
+        className="relative w-full aspect-[4/3] max-w-md rounded-[32px] overflow-hidden flex items-center justify-center p-8 shadow-xl border border-slate-100/50 group cursor-pointer"
         style={{
           background: `linear-gradient(135deg, ${gradientFrom} 0%, ${gradientTo} 100%)`
         }}
       >
+        {/* Competency illustration image */}
+        <img
+          src={image}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply transition-all duration-700 group-hover:scale-105 group-hover:opacity-80 pointer-events-none"
+        />
         {/* Hatch Pattern Overlay */}
         <div
           className="absolute inset-0 opacity-15 pointer-events-none"
@@ -156,7 +164,8 @@ export function CompetencyDetailedList() {
       floatingLabel: 'PHOTO · ANALYST DASHBOARDS',
       floatingMetric: '68%',
       floatingMetricLabel: 'LESS TIME ON DATA PREP',
-      isImageLeft: true
+      isImageLeft: true,
+      image: '/competency_analytics.png'
     },
     {
       indexStr: '02',
@@ -182,7 +191,8 @@ export function CompetencyDetailedList() {
       floatingLabel: 'DB · AUTOMATED SCHEDULING',
       floatingMetric: '99.9%',
       floatingMetricLabel: 'ETL PIPELINE UPTIME',
-      isImageLeft: false
+      isImageLeft: false,
+      image: '/competency_pipeline.png'
     },
     {
       indexStr: '03',
@@ -208,7 +218,8 @@ export function CompetencyDetailedList() {
       floatingLabel: 'SRV · FAILOVER COMPLETED',
       floatingMetric: '< 5m',
       floatingMetricLabel: 'RECOVERY POINT OBJECTIVE',
-      isImageLeft: true
+      isImageLeft: true,
+      image: '/competency_infrastructure.png'
     },
     {
       indexStr: '04',
@@ -234,7 +245,8 @@ export function CompetencyDetailedList() {
       floatingLabel: 'ERP · ORACLE INTEGRATION',
       floatingMetric: '-35%',
       floatingMetricLabel: 'TECH DEBT REDUCTION',
-      isImageLeft: false
+      isImageLeft: false,
+      image: '/competency_erp.png'
     }
   ];
 

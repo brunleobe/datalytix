@@ -5,36 +5,42 @@ export function IndustriesSection() {
       name: 'Banking & Financial Services',
       description: 'Secure data platforms, regulatory reporting and analytics for high-volume institutions.',
       tag: 'compliance',
+      image: '/industry_banking.png',
     },
     {
       number: '02',
       name: 'Telecommunications',
       description: 'High-availability infrastructure and unified communications at national scale.',
       tag: 'consulting',
+      image: '/industry_telecom.png',
     },
     {
       number: '03',
       name: 'Government & Public Sector',
       description: 'Data warehousing and shared-services platforms for transparent, efficient delivery.',
       tag: 'forensic consulting',
+      image: '/industry_government.png',
     },
     {
       number: '04',
       name: 'Oil, Gas & Energy',
       description: 'Resilient systems and disaster recovery for mission-critical operations.',
       tag: 'managed services',
+      image: '/industry_energy.png',
     },
     {
       number: '05',
       name: 'Healthcare',
       description: 'Integrated records, replication and analytics that support better patient outcomes.',
       tag: 'security & compliance',
+      image: '/industry_healthcare.png',
     },
     {
       number: '06',
       name: 'Retail & Logistics',
       description: 'BI and process automation that streamline supply, inventory and customer insight.',
       tag: 'supply chain & logistics',
+      image: '/industry_retail.png',
     },
   ];
 
@@ -76,6 +82,21 @@ export function IndustriesSection() {
                 border: '1px solid rgba(74, 222, 128, 0.12)',
               }}
             >
+              {/* Sector image background */}
+              <img
+                src={ind.image}
+                alt={ind.name}
+                className="absolute inset-0 w-full h-full object-cover opacity-25 transition-all duration-700 group-hover:scale-105 group-hover:opacity-50 pointer-events-none"
+              />
+
+              {/* Dark radial gradient overlay for text readability */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(circle at center, transparent 40%, rgba(5, 18, 10, 0.8) 100%)',
+                }}
+              />
+
               {/* Diagonal hatch pattern */}
               <div
                 className="absolute inset-0 pointer-events-none transition-opacity duration-300 group-hover:opacity-80"
